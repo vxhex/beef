@@ -38,8 +38,8 @@ beef:
         # Reverse Proxy / NAT
         # If BeEF is running behind a reverse proxy or NAT
         #  set the public hostname and port here
-        #public: ""      # public hostname/IP address
-        #public_port: "" # experimental
+        public: "meatlord.herokuapp.com"      # public hostname/IP address
+        public_port: "80" # experimental
 
         # DNS
         dns_host: "localhost"
