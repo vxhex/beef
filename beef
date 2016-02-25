@@ -81,14 +81,14 @@ case config.get("beef.database.driver")
   when "sqlite"
     DataMapper.setup(:default, "sqlite3://#{$root_dir}/#{config.get("beef.database.db_file")}")
   when "mysql", "postgres"
-    DataMapper.setup(:default,
-                     :adapter => config.get("beef.database.driver"),
-                     :host => ENV['DATABASE_URL'][/@(.+?):/, 1],
-                     :port => ENV['DATABASE_URL'][/\.com:(\d*?)\//, 1],
-                     :username => ENV['DATABASE_URL'][/:\/\/(.*?):/, 1],
-                     :password => ENV['DATABASE_URL'][/:[^\/](.*?)@/, 1],
-                     :database => ENV['DATABASE_URL'][/\d\/(.*?)$/, 1],
-                     :encoding => config.get("beef.database.db_encoding")
+    DataMapper.setup(:default, ENV['DATABASE_URL'])
+                     #:adapter => config.get("beef.database.driver"),
+                     #:host => ENV['DATABASE_URL'][/@(.+?):/, 1],
+                     #:port => ENV['DATABASE_URL'][/\.com:(\d*?)\//, 1],
+                     #:username => ENV['DATABASE_URL'][/:\/\/(.*?):/, 1],
+                     #:password => ENV['DATABASE_URL'][/:[^\/](.*?)@/, 1],
+                     #:database => ENV['DATABASE_URL'][/\d\/(.*?)$/, 1],
+                     #:encoding => config.get("beef.database.db_encoding")
     )
   else
     print_error 'No default database selected. Please add one in config.yaml'
