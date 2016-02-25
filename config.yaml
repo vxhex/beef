@@ -94,17 +94,17 @@ beef:
         #   gem "dm-mysql-adapter"
         # if you want to switch drivers from sqlite to postgres (or mysql).
         # Finally, run a 'bundle install' command and start BeEF.
-        driver: "sqlite"
+        driver: "postgres"
 
         # db_file is only used for sqlite
         db_file: "beef.db"
 
         # db connection information is only used for mysql/postgres
-        db_host: "localhost"
-        db_port: 3306
-        db_name: "beef"
-        db_user: "beef"
-        db_passwd: "beef"
+        db_host: "TODO"
+        db_port: 666
+        db_name: "TODO"
+        db_user: "TODO"
+        db_passwd: "TODO"
         db_encoding: "UTF-8"
 
     # Credentials to authenticate in BeEF.
