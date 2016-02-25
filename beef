@@ -89,7 +89,6 @@ case config.get("beef.database.driver")
                      #:password => ENV['DATABASE_URL'][/:[^\/](.*?)@/, 1],
                      #:database => ENV['DATABASE_URL'][/\d\/(.*?)$/, 1],
                      #:encoding => config.get("beef.database.db_encoding")
-    )
   else
     print_error 'No default database selected. Please add one in config.yaml'
 end
